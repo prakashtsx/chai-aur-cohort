@@ -3,7 +3,8 @@
 This project is a **resume website** built using **pure HTML** without any CSS or JavaScript.  
 The goal of this assignment is to demonstrate proper **HTML structure, semantics, readability, and layout organization**.
 
-
+## Live Project Link
+[View Live Resume Website](https://iridescent-scone-1f228f.netlify.app/)
 ## Project Overview
 
 The resume website includes the following sections:
