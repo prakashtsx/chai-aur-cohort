@@ -3,7 +3,6 @@
 This project is a **resume website** built using **pure HTML** without any CSS or JavaScript.  
 The goal of this assignment is to demonstrate proper **HTML structure, semantics, readability, and layout organization**.
 
----
 
 ## Project Overview
 
@@ -40,7 +39,7 @@ The layout is clean and structured using semantic HTML elements such as
 
 ---
 
-## 🚀 How to Run the Project
+## How to Run the Project
 
 1. Clone the repository:
    ```bash
