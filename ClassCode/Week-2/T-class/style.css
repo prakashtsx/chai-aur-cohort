@@ -1,0 +1,6 @@
+.box {
+  position: fixed;
+  color: red;
+  margin: 40px;
+  border: solid green 30px;
+}
