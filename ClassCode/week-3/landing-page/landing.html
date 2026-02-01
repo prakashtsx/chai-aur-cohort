@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChaiCode</title>
+
+    <style>
+      :root {
+        --text-color: #399f4b;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      nav {
+        display: flex;
+        background-color: wheat;
+        height: 50px;
+        justify-content: space-around;
+        align-items: center;
+        margin: 10px;
+        border-radius: 5px;
+      }
+
+      nav h1 {
+        color: var(--text-color);
+      }
+
+      #links {
+        display: flex;
+        gap: 15px;
+      }
+
+      nav a {
+        text-decoration: none;
+        font-size: 18px;
+        color: black;
+      }
+
+      #button-container {
+        display: flex;
+        gap: 15px;
+      }
+
+      #started {
+        padding: 10px 14px;
+        background-color: var(--text-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #started:hover {
+        background-color: darkgoldenrod;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 40px auto;
+        width: 90%;
+      }
+
+      .main-left {
+        max-width: 400px;
+      }
+
+      .main-right img {
+        border-radius: 5px;
+      }
+
+      footer {
+        background-color: var(--text-color);
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <h1>LEARNYST</h1>
+
+      <div id="links">
+        <a href="#">Product</a>
+        <a href="#">Solutions</a>
+        <a href="#">Customer</a>
+        <a href="#">Pricing</a>
+      </div>
+
+      <div id="button-container">
+        <button>Login</button>
+        <button id="started">Get Started</button>
+      </div>
+    </nav>
+
+    <main>
+      <div class="main-left">
+        <h1>My Name is Hitesh. I make coding videos.</h1>
+      </div>
+
+      <div class="main-right">
+        <img
+          width="400"
+          src="https://images.pexels.com/photos/18264716/pexels-photo-18264716.jpeg"
+          alt="coding"
+        />
+      </div>
+    </main>
+
+    <footer>
+      <p>All rights reserved. © Hitesh Sir</p>
+    </footer>
+  </body>
+</html>

@@ -5,12 +5,20 @@
 }
 #parent {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: start;
 }
 
 .child {
   border: 2px solid orange;
   height: 40px;
   width: 40px;
+}
+
+.child-2 {
+  order: 1;
+}
+
+.child-4 {
+  order: 1;
 }
