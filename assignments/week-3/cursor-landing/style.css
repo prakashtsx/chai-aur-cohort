@@ -72,17 +72,40 @@
 }
 .hero-img img {
   width: 100%;
+  height: auto;
   margin-top: 80px;
   display: flex;
   justify-content: center;
   border-radius: 5px;
 }
 .trusted-by {
-  border: 2px solid orange;
-  margin-top: 10px;
+  padding: 80px 48px;
+  text-align: center;
+}
+.trusted-by p {
+  color: #e6e6e6;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 40px;
 }
 
-.trusted-logos {
-  background-color: #14120b;
-  color: white;
+.trusted-by-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.trusted-by-card {
+  height: 96px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trusted-by-card img {
+  max-width: 90px;
+  max-height: 32px;
+  background-color: wheat;
 }
