@@ -4,18 +4,26 @@
   box-sizing: border-box;
   background-color: #14120b;
   color: white;
+  font-family: "CursorGothic", sans-serif;
+}
+body {
+  background-color: #15120b;
 }
 
 .navbar {
   display: flex;
   align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1300px;
+  padding: 14px 0px;
   justify-content: space-between;
   height: 72px;
   padding: 0 48px;
 }
 .logo img {
-  height: 28px;
-  width: auto;
+  height: 24px;
+  width: 92px;
   cursor: pointer;
 }
 .nav-links {
@@ -24,6 +32,10 @@
 }
 .nav-links a {
   text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  margin-left: 24px;
 }
 .nav-links a:hover {
   color: #808080;
@@ -37,10 +49,17 @@
   padding: 0 16px;
   border-radius: 999px;
   cursor: pointer;
+  border-color: #efefef40;
 }
 .primary-cta button:last-child {
   background-color: white;
   color: black;
+}
+main {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1300px;
 }
 
 .hero {
@@ -51,11 +70,9 @@
   min-height: calc(100vh-72px);
 }
 .headline h2 {
-  max-width: 1000px;
-  font-size: 44px;
-  line-height: 1.2;
-  font-weight: 60;
-  color: white;
+  font-weight: 400;
+  margin-bottom: 40px;
+  line-height: -20px;
 }
 .cta-button {
   margin-top: 32px;
@@ -79,69 +96,108 @@
   justify-content: center;
   border-radius: 5px;
 }
-.trusted-by {
-  padding: 80px 48px;
-  text-align: center;
-}
-.trusted-by p {
-  color: #e6e6e6;
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 40px;
-}
 
-.trusted-by-logos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.trusted-by-card {
-  height: 96px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.trusted-by-card img {
-  max-width: 90px;
-  max-height: 32px;
-  background-color: wheat;
-}
-.features {
-  display: flex;
-  flex-direction: column;
-  gap: 120px;
-}
-
-.feature {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 60px;
-}
-
-.feature-content h3 {
-  font-size: 28px;
-  font-weight: 600;
-}
-
-.feature-content p {
-  color: #b3b3b3;
-  margin: 16px 0;
-}
-
-.feature-link {
-  color: #ff6a00;
-  text-decoration: none;
-  font-weight: 500;
-}
-.feature-img img {
+#trusted-by,
+.features,
+.testimonials,
+.stories {
+  position: relative;
   width: 100%;
-  border-radius: 16px;
+  display: grid;
+  justify-content: center;
+  color: #eeecec;
 }
+#trusted-by h3 {
+  color: #eeecec;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+#trusted-by .trusted-by-logos {
+  display: flex;
+  gap: 8px;
+}
+#trusted-by .trusted-by-logos .trusted-by-card img {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+
+#trusted-by .trusted-by-logos .trusted-by-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background: #1a1913;
+  border-radius: 4px;
+}
+#feature {
+  margin-top: 80px;
+  padding: 20px auto;
+  gap: 80px;
+}
+
+#feature .feature-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+  background: #1a1913;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#feature .feature-card.left-img {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+#feature .feature-card:hover {
+  background: #23221b50;
+}
+
+#feature .feature-card .card-body {
+  width: 40%;
+}
+
+#feature .feature-card .card-body h4 {
+  color: #eeecec;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+  background-color: transparent;
+}
+
+#feature .feature-card .card-body p {
+  color: #999997;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+
+#feature .feature-card .card-body a,
+.cta-link {
+  color: #bf420f;
+  text-decoration: none;
+  font-size: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#feature .feature-card .card-body a:hover,
+.cta-link:hover {
+  color: #bf420f90;
+}
+
+#feature .feature-card .card-img img {
+  width: 850px;
+  border-radius: 4px;
+}
+
 .testimonials {
   padding: 120px 48px;
   text-align: center;
@@ -156,7 +212,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -377,19 +432,17 @@
   text-decoration: none;
 }
 .final-cta {
-  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 32px;
-  text-align: center;
+  color: #eeecec;
+  gap: 20px;
+  height: 320px;
 }
 .final-cta h1 {
-  font-size: 56px;
-  font-weight: 600;
-  color: white;
-  letter-spacing: -0.02em;
+  font-size: 72px;
+  line-height: 80px;
 }
 .download {
   height: 48px;
