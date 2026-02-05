@@ -1,0 +1,98 @@
+:root {
+  --bg-color: #f4f5f4;
+  --color-darkgreen: #1d4c56;
+  --color-lightgreen: #45bc97;
+  --color-badge: #96b099;
+  --color-brown: #b4ab48;
+  --color-darkbrown: #88600e;
+  --color-lightbrown: #d1d092;
+  --color-subheading: #08090acc;
+  --color-blue: #3a88c8;
+  --color-lightpink: #bca794;
+  --color-black: #000;
+
+  --text-white: #f4f5f4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+header {
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.221)
+    ),
+    url(./assets/bg-light.svg);
+  background-repeat: no-repeat;
+  background-size: 110% auto;
+  background-repeat: no-repeat;
+  background-position: center -85px;
+}
+
+/* Styling for navbar */
+header nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  gap: 4rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 100%;
+}
+.link {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+.link li a {
+  font-size: 15px;
+  text-decoration: none;
+  color: var(--text-white);
+  font-weight: 500;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+}
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.sales-btn {
+  gap: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 4.5px 12px;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background-color: rgba(244, 244, 244, 0.104);
+  color: var(--text-white);
+}
+.start-free {
+  gap: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 4.5px 12px;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background-color: white;
+  color: var(--color-black);
+}
