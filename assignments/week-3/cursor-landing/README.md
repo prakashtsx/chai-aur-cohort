@@ -36,3 +36,5 @@ A static recreation of the Cursor landing page sections using HTML and CSS.
 ## Repository and Hosting
 
 - Repository: [cursor-landing](https://github.com/prakashtsx/chai-aur-cohort/tree/main/assignments/week-3/cursor-landing)
+
+- Live Webiste : [Click Here to View](https://cursorcloneweb.netlify.app/)
