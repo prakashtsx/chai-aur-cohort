@@ -90,3 +90,12 @@ let partner = null;
 // ! Undefined : Value not assigned
 
 let bodyCount;
+
+//! Type Conversion 
+let myName = "Prakash";
+console.log(myName.toUpperCase())
+
+/// Boolean Conversion 
+console.log(Boolean(0));
+
+/// Truthy and falsy value (only 6 value are falsy in js )
