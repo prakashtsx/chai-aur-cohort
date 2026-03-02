@@ -1,12 +1,57 @@
-const promise = new Promise((res, rej) => {
-  setTimeout(() => {
-    res("chaicode");
-  }, 2000);
+// const allPromise = Promise.allSettled([
+//   Promise.resolve("chaicode"),
+//   Promise.resolve("Headquarter"),
+//   Promise.reject("You are rejected"),
+// ]);
+
+// // allPromise.then(console.log);
+// allPromise.then((data) => {
+//   console.log(data);
+// });
+//
+//
+// ------------------------------------------------------
+// const hPromise = new Promise((res, rej) => {
+//   setTimeout(() => {
+//     // res("Masterji");
+//     rej(new Error("Ye Error hai"));
+//   }, 3000);
+// });
+
+// function nice() {
+//   hPromise.then((value) => {
+//     setTimeout(() => {
+//       console.log(value);
+//     }, 4000);
+//   });
+// }
+// nice();
+
+// async function nice() {
+//   const result = await hPromise;
+//   console.log(result);
+// }
+// nice();
+
+// const newResult = await hPromise;
+// console.log(newResult);
+
+// async function nice() {
+//   try {
+//     const result = await hPromise;
+//     console.log(result);
+//   } catch (error) {
+//     console.log("Error ka code hai ji : ", error.message);
+//   }
+// }
+
+// nice();
+
+// ---------------------------------------------------------------------
+
+console.log("Swastik");
+
+Promise.resolve("Resolved Value").then((v) => {
+  console.log(v);
 });
-console.log(promise);
-// setTimeout(() => {
-//   console.log(promise);
-// }, 3000); // this will run after 3 sec.
-promise.then((value) => {
-  console.log(value);
-}); // res ki data value
+console.log("Prakash");
