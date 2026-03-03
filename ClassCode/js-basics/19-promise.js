@@ -49,9 +49,5 @@
 
 // ---------------------------------------------------------------------
 
-console.log("Swastik");
 
-Promise.resolve("Resolved Value").then((v) => {
-  console.log(v);
-});
-console.log("Prakash");
+
