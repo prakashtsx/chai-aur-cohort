@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Github Profile Finder</title>
+  </head>
+  <body>
+    <main>
+      <section class="header">
+        <h1>GitHub Profile Finder</h1>
+        <p>Fetch GitHub profile details using username</p>
+      </section>
+      <section class="search-section">
+        <form id="search-form">
+          <input
+            id="username"
+            type="text"
+            placeholder="Enter GitHub Username"
+            required
+          />
+          <button type="submit">Search</button>
+        </form>
+      </section>
+      <section id="profile-container">
+        <img id="contribution-graph" />
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
