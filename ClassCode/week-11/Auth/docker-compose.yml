@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:17
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: chaicode
+    volumes:
+      - postgres_data:/var/lib/postgresql/data #data persist if container is removed
+volumes:
+  postgres_data:
