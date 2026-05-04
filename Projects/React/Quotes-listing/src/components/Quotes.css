@@ -1,0 +1,247 @@
+.quotes-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 50%, #ede9e0 100%);
+  padding: 40px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+.quotes-container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(226, 181, 181, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(143, 170, 170, 0.05) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.quotes-header {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #2c2c2c;
+  position: relative;
+  z-index: 1;
+}
+
+.quotes-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  letter-spacing: -1px;
+  color: #1a1a1a;
+  animation: slideDown 0.6s ease-out;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #6b6b6b;
+  margin: 0;
+  font-weight: 300;
+  animation: slideDown 0.8s ease-out;
+}
+
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quote-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: fadeInUp 0.6s ease-out;
+  border-left: 4px solid #a4b8b8;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  border-left-color: #7a9a9a;
+}
+
+.quote-content {
+  margin-bottom: 25px;
+}
+
+.quote-icon {
+  width: 40px;
+  height: 40px;
+  color: #a4b8b8;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.quote-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #2c2c2c;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.quote-author {
+  border-top: 1px solid #e8e4db;
+  padding-top: 20px;
+  text-align: right;
+}
+
+.quote-author span {
+  font-size: 1rem;
+  color: #7a9a9a;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #2c2c2c;
+  position: relative;
+  z-index: 1;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(164, 184, 184, 0.2);
+  border-top-color: #7a9a9a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.loading p {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: #6b6b6b;
+}
+
+/* Error State */
+.error {
+  background: #d4a5a5;
+  color: #3a2a2a;
+  padding: 20px 30px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 500px;
+  margin: 50px auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #8b5a5a;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .quotes-container {
+    padding: 20px 15px;
+  }
+
+  .quotes-header h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .quotes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .quote-card {
+    padding: 30px;
+  }
+
+  .quote-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .quote-author span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quotes-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .quote-card {
+    padding: 20px;
+  }
+
+  .quote-text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .quote-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 15px;
+  }
+}
