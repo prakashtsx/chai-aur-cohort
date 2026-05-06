@@ -1,0 +1,165 @@
+.app {
+  min-height: 100vh;
+  padding: 38px 20px;
+  background: #fffaf0;
+}
+
+.header {
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.header p {
+  margin: 0 0 8px;
+  color: #16a34a;
+  font-weight: 800;
+}
+
+.header h1 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 42px;
+  font-weight: 900;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  padding: 16px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 12px 28px rgba(90, 70, 40, 0.1);
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  background: #16a34a;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #15803d;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.controls span {
+  color: #475569;
+  font-weight: 800;
+}
+
+.meal-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.meal-card {
+  overflow: hidden;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 12px 28px rgba(90, 70, 40, 0.1);
+}
+
+.meal-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.meal-info {
+  padding: 18px;
+}
+
+.meal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.meal-tags span,
+.ingredients span {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.meal-info h2 {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 23px;
+}
+
+.meal-info p {
+  display: -webkit-box;
+  margin: 0 0 14px;
+  overflow: hidden;
+  color: #64748b;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.meal-info a {
+  display: inline-block;
+  color: #16a34a;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.meal-info a:hover {
+  text-decoration: underline;
+}
+
+.message {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+  color: #16a34a;
+  background: white;
+  text-align: center;
+}
+
+.error {
+  color: #dc2626;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 28px 14px;
+  }
+
+  .header h1 {
+    font-size: 34px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+}
