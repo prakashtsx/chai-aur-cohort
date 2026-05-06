@@ -1,0 +1,115 @@
+.app {
+  min-height: 100vh;
+  padding: 30px 22px;
+  background: #f8fafc;
+}
+
+.app h1 {
+  max-width: 1180px;
+  margin: 0 auto 28px;
+  color: #0f172a;
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.video-card {
+  overflow: hidden;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+}
+
+.thumbnail-box {
+  position: relative;
+  background: #111827;
+}
+
+.thumbnail-box img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.quality {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.video-info {
+  padding: 16px;
+}
+
+.video-info h2 {
+  margin: 0 0 8px;
+  color: #111827;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.channel {
+  margin: 0 0 10px;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.description {
+  display: -webkit-box;
+  min-height: 62px;
+  margin: 0 0 14px;
+  overflow: hidden;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.video-stats {
+  display: flex;
+  gap: 12px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.message {
+  margin-top: 80px;
+  color: #2563eb;
+  text-align: center;
+}
+
+.error {
+  color: #dc2626;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 22px 14px;
+  }
+
+  .app h1 {
+    font-size: 30px;
+  }
+
+  .video-list {
+    grid-template-columns: 1fr;
+  }
+}
