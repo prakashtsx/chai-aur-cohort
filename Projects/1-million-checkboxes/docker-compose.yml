@@ -1,0 +1,38 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: checkbox-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: ["redis-server", "--appendonly", "yes"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  app:
+    build: .
+    container_name: one-million-checkboxes
+    depends_on:
+      redis:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      PUBLIC_BASE_URL: http://localhost:3000
+      REDIS_URL: redis://redis:6379
+      SESSION_SECRET: change-me-in-production
+      JWT_SECRET: change-me-too
+      TOTAL_CHECKBOXES: 1000000
+      VISIBLE_WINDOW_SIZE: 1000
+      HTTP_RATE_LIMIT_MAX: 120
+      HTTP_RATE_LIMIT_WINDOW_SECONDS: 60
+      SOCKET_TOGGLE_LIMIT_MAX: 60
+      SOCKET_TOGGLE_LIMIT_WINDOW_SECONDS: 10
+
+volumes:
+  redis-data:

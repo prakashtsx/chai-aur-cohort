@@ -1,0 +1,26 @@
+{
+  "name": "one-million-checkboxes-realtime",
+  "version": "1.0.0",
+  "description": "Real-time 1 Million Checkboxes clone with Express, WebSockets, Redis, custom rate limiting, and OAuth/OIDC-style authentication.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "express",
+    "websocket",
+    "redis",
+    "oauth2",
+    "oidc",
+    "checkboxes"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "redis": "^4.7.0",
+    "ws": "^8.18.0"
+  }
+}
