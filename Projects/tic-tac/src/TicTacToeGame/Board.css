@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700;900&display=swap");
+
+/* Japanese-inspired Tic-Tac-Toe board with shoji, ink, and stamp styling */
+
+.board-wrapper {
+  width: min(640px, 92vw);
+  margin: clamp(1.5rem, 4vw, 3rem) auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  isolation: isolate;
+}
+
+.board-wrapper::before,
+.board-wrapper::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(18px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.board-wrapper::before {
+  width: 10rem;
+  height: 10rem;
+  top: -1rem;
+  left: -1rem;
+  background: radial-gradient(circle, rgba(179, 38, 30, 0.16), transparent 72%);
+}
+
+.board-wrapper::after {
+  width: 12rem;
+  height: 12rem;
+  right: -1rem;
+  bottom: -2rem;
+  background: radial-gradient(
+    circle,
+    rgba(184, 138, 59, 0.14),
+    transparent 72%
+  );
+}
+
+.game-status {
+  margin: 0;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid rgba(68, 48, 38, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.68);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(55, 34, 21, 0.08);
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  font-weight: 700;
+  font-family: "Noto Serif JP", Georgia, serif;
+  letter-spacing: 0.02em;
+  color: #1d1712;
+  text-align: center;
+}
+
+.restart-button {
+  border: 1px solid rgba(68, 48, 38, 0.16);
+  border-radius: 999px;
+  padding: 0.85rem 1.35rem;
+  background: linear-gradient(180deg, #b3261e 0%, #8f1d17 100%);
+  color: #fff7f0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  box-shadow: 0 12px 24px rgba(179, 38, 30, 0.22);
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.restart-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px rgba(179, 38, 30, 0.26);
+  filter: saturate(1.04);
+}
+
+.restart-button:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.board-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: clamp(0.7rem, 2vw, 1rem);
+  border: 1px solid rgba(68, 48, 38, 0.14);
+  border-radius: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 253, 248, 0.94),
+    rgba(245, 235, 221, 0.96)
+  );
+  box-shadow: 0 24px 70px rgba(53, 32, 18, 0.14);
+  position: relative;
+  overflow: hidden;
+}
+
+.board-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0 33.33%,
+      rgba(68, 48, 38, 0.03) 33.33% 33.7%,
+      transparent 33.7% 66.66%,
+      rgba(68, 48, 38, 0.03) 66.66% 67%,
+      transparent 67% 100%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0 33.33%,
+      rgba(68, 48, 38, 0.03) 33.33% 33.7%,
+      transparent 33.7% 66.66%,
+      rgba(68, 48, 38, 0.03) 66.66% 67%,
+      transparent 67% 100%
+    );
+  opacity: 0.9;
+}
+
+.board-row {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.square {
+  flex: 1 1 0;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background:
+    radial-gradient(
+      circle at 30% 28%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.08) 48%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 250, 242, 0.98),
+      rgba(247, 236, 221, 0.96)
+    );
+  font-size: clamp(1.8rem, 6vw, 3.2rem);
+  font-weight: 900;
+  font-family: "Noto Serif JP", Georgia, serif;
+  color: #1d1712;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: inset 0 0 0 1px rgba(68, 48, 38, 0.08);
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
+}
+
+.square h5 {
+  margin: 0;
+  font-size: inherit;
+  line-height: 1;
+  color: inherit;
+}
+
+/* Horizontal grid lines between first/second rows */
+.board-container .board-row:nth-child(1) .square,
+.board-container .board-row:nth-child(2) .square {
+  margin-bottom: 0.7rem;
+}
+
+/* Vertical grid lines between first/second columns */
+.board-row .square:nth-child(1),
+.board-row .square:nth-child(2) {
+  margin-right: 0.7rem;
+}
+
+.square:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 0 0 1px rgba(179, 38, 30, 0.12),
+    0 12px 24px rgba(53, 32, 18, 0.08);
+  color: #b3261e;
+}
+
+.square:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.square h5:empty {
+  opacity: 0;
+}
+
+/* Small screens: slightly reduce gaps and font-sizes */
+@media (max-width: 380px) {
+  .board-wrapper {
+    width: 94vw;
+    gap: 0.85rem;
+  }
+
+  .board-container {
+    padding: 0.55rem;
+    border-radius: 22px;
+  }
+
+  .square {
+    border-radius: 14px;
+  }
+
+  .square {
+    font-size: clamp(1.5rem, 8vw, 2.3rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .square,
+  .restart-button {
+    transition: none;
+  }
+}
